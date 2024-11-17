@@ -10,27 +10,42 @@ const meta: Meta<typeof Button> = {
     args: {
 		children: 'Button',
 	},
+	argTypes: {
+		disabled: { 
+			control: 'boolean',
+		},
+		variant: {
+			control: 'select',
+		}
+	},
 } satisfies Meta;
 
 export default meta;
 
-export const Primary: Story = {
+export const Default: Story = {
 	args: {
-		children: 'Button', // what is this actually for?
-		variant: 'primary',
+		children: 'Button', // what is this actually for? "All children go under button?
+		variant: 'Default',
 	},
 };
 
 export const Secondary: Story = {
 	args: {
 		children: 'Button',
-		variant: 'secondary',
+		variant: 'Secondary',
 	},
 };
 
-export const Destructive: Story = {
+export const AccentCool: Story = {
 	args: {
 		children: 'Button',
-		variant: 'destructive',
+		variant: "Accent Cool",
+	},
+};
+
+export const AccentWarm: Story = {
+	args: {
+		children: 'Button',
+			variant: 'Accent Warm',
 	},
 };
