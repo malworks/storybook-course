@@ -24,7 +24,7 @@ export default meta;
 
 export const Default: Story = {
 	args: {
-		children: 'Button', // what is this actually for? "All children go under button?
+		children: 'Button',
 		variant: 'Default',
 	},
 };
