@@ -1,6 +1,7 @@
-import '@uswds/compile';
 
-const uswds = require("@uswds/compile");
+import uswds from '@uswds/compile';
+
+// const uswds = require("@uswds/compile"); // require is used for node and import is used w/ js
 
 /**
  * USWDS version
@@ -21,5 +22,9 @@ uswds.paths.dist.theme = "./sass";
  * Add as many as you need
  */
 
-exports.init = uswds.init;
-exports.compile = uswds.compile;
+export const init = uswds.init;
+export const compile = uswds.compile; // we changed from node style import/export to ES6 Modules style imports
+
+// 2 ways to import import from 'file' and import {init} from 'gulpfile...'
+// New software should use ES 6 modules, unless require is already used in existing
+// if run into "type doesnt exist, try @types/packageName" however for uswds that doesnt exist
