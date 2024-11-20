@@ -10,9 +10,9 @@ export type ButtonProps = ComponentProps<'button'> & {
 export const Button = ({ variant = 'Default', size = 'Standard', className, ...props }: ButtonProps) => {
 	return (
 		<button
-			className={clsx(styles.button, {
+			className={clsx('usa-button', {
 				[styles.Default]: variant === 'Default',
-				[styles.Secondary]: variant === 'Secondary',
+				'usa-button--secondary': variant === 'Secondary',
 				[styles.AccentCool]: variant === 'Accent Cool',
 				[styles.AccentWarm]: variant === 'Accent Warm',
 				[styles.sizeStandard]: size === 'Standard',
