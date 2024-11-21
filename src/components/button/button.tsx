@@ -1,32 +1,26 @@
 import { ComponentProps } from 'react';
-import styles from './button.module.css';
 import clsx from 'clsx';
 
 export type ButtonProps = ComponentProps<'button'> & {
-	variant: 'Default' | 'Secondary' | 'Accent Cool' | 'Accent Warm';
+	category: 'Standard' | 'Outline' | 'Unstyled';
+	mainColor: 'Default' | 'Secondary' | 'Accent Cool' | 'Accent Warm' | 'Base';
 	size: 'Standard' | 'Big';
 };
 
-export const Button = ({ variant = 'Default', size = 'Standard', className, ...props }: ButtonProps) => {
+export const Button = ({ category = 'Standard', mainColor = 'Default', size = 'Standard', className, ...props }: ButtonProps) => {
 	return (
 		<button
 			className={clsx('usa-button', {
-				[styles.Default]: variant === 'Default',
-				'usa-button--secondary': variant === 'Secondary',
-				[styles.AccentCool]: variant === 'Accent Cool',
-				[styles.AccentWarm]: variant === 'Accent Warm',
-				[styles.sizeStandard]: size === 'Standard',
-				[styles.sizeBig]: size === 'Big',
+				'usa-button--secondary': mainColor === 'Secondary',
+				'usa-button--accent-cool': mainColor === 'Accent Cool',
+				'usa-button--accent-warm': mainColor === 'Accent Warm',
+				'usa-button--base': mainColor === 'Base',
+				'usa-button--big': size === 'Big',
+				'usa-button--outline': category === 'Outline',
+				'usa-button--unstyled': category === 'Unstyled',
 			})}
 			{...props}
 		/>
 	);
 };
-
-
-// export const Button = ({ variant = 'Default', size = 'Standard', className, ...props }: ButtonProps) => {
-// 	let classes = clsx(styles.button, styles[variant], styles[size], className);
-
-// 	return <button {...props} className=[classes] />
-// };
 

@@ -9,14 +9,18 @@ const meta: Meta<typeof Button> = {
 	component: Button,
     args: {
 		children: 'Button',
-		variant: 'Default',
+		category: 'Standard',
+		mainColor: 'Default',
 		size: 'Standard',
 	},
 	argTypes: {
 		disabled: { 
 			control: 'boolean',
 		},
-		variant: {
+		mainColor: {
+			control: 'select',
+		},
+		category: {
 			control: 'select',
 		}
 	},
@@ -27,27 +31,55 @@ export default meta;
 export const Default: Story = {
 	args: {
 		children: 'Button',
-		variant: 'Default',
+		mainColor: 'Default',
 	},
 };
 
 export const Secondary: Story = {
 	args: {
 		children: 'Button',
-		variant: 'Secondary',
+		mainColor: 'Secondary',
 	},
 };
 
 export const AccentCool: Story = {
 	args: {
 		children: 'Button',
-		variant: "Accent Cool",
+		mainColor: "Accent Cool",
 	},
 };
 
 export const AccentWarm: Story = {
 	args: {
 		children: 'Button',
-			variant: 'Accent Warm',
+		mainColor: 'Accent Warm',
+	},
+};
+
+export const Base: Story = {
+	args: {
+		children: 'Button',
+			mainColor: 'Base',
+	},
+};
+
+export const Outline: Story = {
+	args: {
+		children: 'Button',
+			category: 'Outline',
+	},
+};
+
+export const Unstyled: Story = {
+	args: {
+		children: 'Button',
+			category: 'Unstyled',
+	},
+};
+
+export const sizeBig: Story = {
+	args: {
+		children: 'Button',
+			size: 'Big',
 	},
 };
