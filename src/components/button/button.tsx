@@ -11,12 +11,12 @@ export const Button = ({ variant = 'Default', size = 'Standard', className, ...p
 	return (
 		<button
 			className={clsx('usa-button', {
-				[styles.Default]: variant === 'Default',
+				// [styles.Default]: variant === 'Default', Not Needed?
 				'usa-button--secondary': variant === 'Secondary',
-				[styles.AccentCool]: variant === 'Accent Cool',
-				[styles.AccentWarm]: variant === 'Accent Warm',
-				[styles.sizeStandard]: size === 'Standard',
-				[styles.sizeBig]: size === 'Big',
+				'usa-button--accent-cool': variant === 'Accent Cool',
+				'usa-button--accent-warm': variant === 'Accent Warm',
+				// [styles.sizeStandard]: size === 'Standard', Not needed?
+				'usa-button--big': size === 'Big',
 			})}
 			{...props}
 		/>
