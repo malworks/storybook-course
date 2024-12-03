@@ -4,7 +4,7 @@ import clsx from 'clsx';
 export type ButtonProps = ComponentProps<'button'> & {
 	category: 'Standard' | 'Outline' | 'Unstyled';
 	mainColor: 'Default' | 'Secondary' | 'Accent Cool' | 'Accent Warm' | 'Base';
-	size: 'Standard' | 'Big';
+	size: 'Standard' | 'Big'; // Do I even need a standard size?
 };
 
 export const Button = ({ category = 'Standard', mainColor = 'Default', size = 'Standard', className, ...props }: ButtonProps) => {
